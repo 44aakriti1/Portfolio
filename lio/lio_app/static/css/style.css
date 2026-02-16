@@ -1,0 +1,47 @@
+/* ... keep your existing CSS from before, but add/update these: */
+
+:root {
+    --soft-pink: #FFF5F7;
+    --main-pink: #f472b6;
+    --soft-purple: #f5f3ff;
+}
+
+body {
+    background-color: var(--soft-pink);
+    font-family: 'Quicksand', sans-serif;
+    color: #4b5563;
+    margin: 0;
+}
+
+/* Progress Bar Fix */
+.progress-bg {
+    background: #f1f1f1;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    background: #fbcfe8; /* Soft pink color */
+    height: 100%;
+    border-radius: 10px;
+    /* This tells the bar to use the 'width' variable we set in HTML */
+    width: var(--progress-width); 
+}
+
+/* Add some padding to the main container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #fee2e2;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}

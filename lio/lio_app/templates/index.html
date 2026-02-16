@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aakriti Maharjan | Portfolio</title>
+    
+    <!-- Tailwind CSS for modern UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Quicksand (Cute/Clean) & Playfair (Elegant) -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Quicksand', sans-serif; background-color: #fffafb; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* Glassmorphism Effect for Navbar */
+        .glass { 
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(251, 207, 232, 0.3); 
+        }
+
+        /* Custom Progress Bar Fix to stop VS Code Errors */
+        .progress-fill {
+            width: var(--percent); /* We set this variable in the HTML below */
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* Soft Background Blobs */
+        .blob { 
+            position: absolute; width: 400px; height: 400px; 
+            background: #fbcfe8; filter: blur(90px); 
+            border-radius: 50%; z-index: -1; 
+            animation: float 20s infinite alternate; 
+        }
+        @keyframes float { 
+            from { transform: translate(0, 0); } 
+            to { transform: translate(100px, 50px); } 
+        }
+    </style>
+</head>
+<body class="text-gray-800 overflow-x-hidden">
+
+    <!-- Background Decorations -->
+    <div class="blob top-0 left-0 opacity-30"></div>
+    <div class="blob bottom-0 right-0 opacity-20" style="background: #e9d5ff;"></div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 glass px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-serif italic font-bold text-pink-400 tracking-tighter">AM.</a>
+        <div class="hidden md:flex space-x-8 font-bold text-xs uppercase tracking-widest text-gray-500">
+            <a href="#home" class="hover:text-pink-400 transition">Home</a>
+            <a href="#about" class="hover:text-pink-400 transition">About</a>
+            <a href="#projects" class="hover:text-pink-400 transition">Projects</a>
+            <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="https://github.com/44aakriti1" target="_blank" class="opacity-50 hover:opacity-100 transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="w-5">
+            </a>
+            <a href="#contact" class="bg-pink-400 text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg shadow-pink-100 hover:bg-pink-500 transition">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <div data-aos="zoom-in" class="relative mb-8">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-[3rem] bg-white p-2 shadow-2xl rotate-3 hover:rotate-0 transition-all duration-500 border border-pink-50">
+                <!-- Placeholder for your photo -->
+                <div class="w-full h-full bg-pink-100 rounded-[2.5rem] flex items-center justify-center text-5xl">🌸</div>
+            </div>
+        </div>
+        <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-serif italic text-gray-900">Aakriti Maharjan</h1>
+        <p data-aos="fade-up" data-aos-delay="100" class="mt-4 text-lg md:text-xl text-gray-500 max-w-2xl font-light">
+            Computer Science Student & <span class="text-pink-400 font-semibold">UI/UX Enthusiast</span>. 
+            Building clean, aesthetic, and functional digital experiences.
+        </p>
+        <div data-aos="fade-up" data-aos-delay="200" class="mt-10">
+            <a href="#projects" class="group flex items-center space-x-2 text-pink-400 font-bold uppercase text-xs tracking-widest">
+                <span>View My Work</span>
+                <span class="group-hover:translate-x-2 transition-transform">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT & SKILLS SECTION -->
+    <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-serif italic mb-6">About Me</h2>
+                <p class="text-lg leading-relaxed text-gray-600 mb-6">
+                    I am a passionate developer based in Nepal, currently pursuing my degree in Computer Science. 
+                    I love the intersection of **logic** and **design**. My goal is to create software that feels as good as it looks.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-white border border-pink-100 text-pink-400 rounded-2xl text-sm font-bold shadow-sm">Django Developer</span>
+                    <span class="px-4 py-2 bg-white border border-purple-100 text-purple-400 rounded-2xl text-sm font-bold shadow-sm">UI Designer</span>
+                    <span class="px-4 py-2 bg-white border border-blue-100 text-blue-400 rounded-2xl text-sm font-bold shadow-sm">Pythonista</span>
+                </div>
+            </div>
+            
+            <!-- Skills Card -->
+            <div data-aos="fade-left" class="bg-white p-10 rounded-[3rem] shadow-xl shadow-pink-50/50 border border-pink-50">
+                <h3 class="text-xl font-bold mb-8 flex items-center">
+                    <span class="mr-2">✨</span> Technical Expertise
+                </h3>
+                <div class="space-y-8">
+                    {% for skill in skills %}
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm font-bold">
+                            <span class="text-gray-600">{{ skill.name }}</span>
+                            <span class="text-pink-400">{{ skill.percentage }}%</span>
+                        </div>
+                        <div class="w-full bg-gray-50 h-2 rounded-full overflow-hidden">
+                            <!-- FIX: Using CSS Variable --percent to avoid VS Code errors -->
+                            <div class="progress-fill bg-pink-300 h-full rounded-full" style="--percent: {{ skill.percentage }}%;"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-24 bg-white/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-serif italic mb-4">Selected Projects</h2>
+                <p class="text-gray-400 uppercase tracking-widest text-xs font-bold">Handcrafted & GitHub Repos</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Manual Projects from Admin -->
+                {% for p in projects %}
+                <div data-aos="fade-up" class="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-50">
+                    <div class="relative overflow-hidden h-60">
+                        {% if p.image %}
+                            <img src="{{ p.image.url }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        {% else %}
+                            <div class="w-full h-full bg-pink-50 flex items-center justify-center text-pink-200 font-bold italic">No Image</div>
+                        {% endif %}
+                        <div class="absolute inset-0 bg-pink-400/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    </div>
+                    <div class="p-8">
+                        <span class="text-[10px] font-black text-pink-300 uppercase tracking-[0.2em]">{{ p.tech_stack }}</span>
+                        <h4 class="text-xl font-bold mt-2 mb-3">{{ p.title }}</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">{{ p.description }}</p>
+                        <a href="{{ p.link }}" target="_blank" class="text-xs font-bold border-b-2 border-pink-100 hover:border-pink-400 transition pb-1">View Project</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- GitHub Repos (Dynamic) -->
+                {% for repo in repos %}
+                <div data-aos="fade-up" class="bg-purple-50/30 p-8 rounded-[2.5rem] border border-purple-100 flex flex-col justify-between hover:bg-white transition-all duration-300">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-6">
+                            <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                            <span class="text-[10px] font-bold text-purple-400 uppercase tracking-widest">GitHub Activity</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-purple-900 mb-3">{{ repo.name }}</h4>
+                        <p class="text-sm text-purple-700/50 mb-8 italic">
+                            {{ repo.description|default:"A creative coding exploration on GitHub." }}
+                        </p>
+                    </div>
+                    <a href="{{ repo.html_url }}" target="_blank" class="text-xs font-bold text-purple-500 flex items-center group">
+                        <span>Source Code</span>
+                        <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-5xl mx-auto bg-pink-400 rounded-[4rem] p-10 md:p-20 text-white relative overflow-hidden shadow-2xl shadow-pink-200">
+            <div class="relative z-10 grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-serif italic mb-8">Let's create something magic.</h2>
+                    <p class="opacity-80 text-lg mb-10">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                    <div class="space-y-6 font-medium">
+                        <div class="flex items-center space-x-4">
+                            <span class="bg-white/20 p-3 rounded-2xl">📧</span>
+                            <span>maharjanaakriti1@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="bg-white/20 p-3 rounded-2xl">🔗</span>
+                            <a href="https://www.linkedin.com/in/aakriti-maharjan-522702224/" class="hover:underline">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <form method="POST" class="space-y-4">
+                    {% csrf_token %}
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" name="name" placeholder="Name" class="w-full p-5 rounded-3xl bg-white/10 border border-white/20 placeholder-white/60 focus:bg-white focus:text-gray-800 transition outline-none" required>
+                        <input type="email" name="email" placeholder="Email" class="w-full p-5 rounded-3xl bg-white/10 border border-white/20 placeholder-white/60 focus:bg-white focus:text-gray-800 transition outline-none" required>
+                    </div>
+                    <textarea name="message" rows="5" placeholder="Your Message" class="w-full p-5 rounded-3xl bg-white/10 border border-white/20 placeholder-white/60 focus:bg-white focus:text-gray-800 transition outline-none" required></textarea>
+                    <button type="submit" class="w-full py-5 bg-white text-pink-400 rounded-3xl font-bold hover:scale-[1.02] active:scale-95 transition shadow-xl">Send Message ✨</button>
+                </form>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full"></div>
+        </div>
+    </section>
+
+    <footer class="py-16 text-center">
+        <p class="text-gray-400 text-xs font-bold uppercase tracking-[0.3em]">Aakriti Maharjan • 2024</p>
+        <p class="mt-2 text-[10px] text-pink-200 italic">Built with Django & Love</p>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ 
+            duration: 1000, 
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
